@@ -1,0 +1,166 @@
+nên đặt tên file là index,vì khi đăng tải website lên trên hosting,đa phần hosting cấu hình mặc định là tự động truy cập vào file index, thường sử dụng file tên này để code trang chủ website
+định nghĩa loại tài liệu là html
+    type : loại
+các thẻ hay dùng
+1.h1-h6 : heading - tạo ra tiêu đề ví dụ như tiêu đề bài báo và chữ nhỏ dần từ h2 -> h6
+2.p : paragraph - 1 đoạn văn không xuống dòng
+3.img : các thuộc tính có thể thêm như 
+         width : chiều rộng ảnh 
+         src - source : nguồn / địa chỉ file ảnh
+        alt - attribute : thuộc tính ảnh 
+4.a : anchor - mỏ neo, thẻ để đặt liên kết 
+     href - Hypertext Reference: tham chiếu siêu văn bản 
+5.ul,li : unordered list - tạo danh sách tự sắp xếp với cách đánh là dấu chấm,
+          ol -  tạo danh sách tự sắp xếp với cách đánh là số,
+          list item - tạo nội dung cái mục trong danh sách
+6.table : thead - phần đầu bảng 
+             th - nội dung từng cột phần đầu bảng
+          tbody - phần thân bảng
+             tr - khai báo dòng - table row
+             td - nội dung từng cột phần thân bảng
+7.input : các thao tác với bên ngoài
+    - text : nhập văn bản
+    - password : mật khẩu 
+    - submit : kết thúc
+    - checkbox : chọn dấu tích
+    - radio : khác với checkbox là chỉ có thể chọn được 1 cái khi đặt chung 1 name
+      <input name="gender" type="radio">
+      <input name="gender" type="radio">
+8.button : cái nút - bấm vào để làm gì đó ví dụ chuyển hướng
+9.div : tạo các khối 
+_______________________________________________________________________________
+attribute - các thuộc tính của thẻ, nằm trong thẻ mở
+    với mỗi thẻ có rất nhiều thuộc tính
+ ví dụ : + <h1 title="ở đây là tiêu đề"> Ở đây là tiêu đề  </h1> 
+          khi di chuột đến cái tiêu đề nó sẽ hiện lên cái title là 1 dòng chữ nhỏ hiển thị lên
+         + hoặc các thẻ như img hay a cũng được tích hợp sẵn các thuộc tính 
+
+ Các cách sử dụng và độ ưu tiên trong css: 
+    1.Internal : (css nội bộ) bên trong có thể viết ở bất cứ đâu trong html miễn là nó hợp lệ
+            - thẻ style : tham chiếu tới thẻ (vd: h1) để thay đổi thuộc tính (color,font-size,...)  
+    2.External : tạo 1 chương trình css ở bên ngoài và sửa bên html
+            - thẻ link : <link rel="stylesheet" href=""> bắt buộc phải có rel="stylesheet" mới hiểu là css
+    3.Inline : (css nội tuyến) viết luôn vào trong 1 dòng đưa trực tiếp thuộc tính style vào trong thẻ giữa các thuộc tính của style ngăn cách bằng dấu ";"
+             <p style="color:blue; font-size: 30px;">
+                ở đây là đoạn văn
+             </p>
+    4.Chấm điểm các phương pháp:
+     cách nào nhiều điểm hơn sẽ được ưu tiên , trường hợp giống nhau thì cái nào mới hơn sẽ được ưu tiên
+       s.Internal,External
+       a.Inline - 1000
+       b."#id" - 100
+       c.".class" - 10 
+       d.tag - 1 
+       e.Equal specificity
+       f.Univernal selector and inherited - 0
+________________________________________________________________________________________________
+THUỘC TÍNH CSS
+________________________________________________________________________________________________
+Lớp giả
+       :root tham chiếu tới toàn bộ (gốc)
+       :hover tham chiếu tới thẻ muốn tham chiếu chỉ đc kích hoạt khi chuột
+       :active giống hover nhưng cần bấm chuột(dùng đổi màu link)
+       :first-child lấy đc con đầu tiên hoặc cuối cùng
+       :last-child 
+Phần tử giả (ví dụ muốn tạo 1 box trong 1 box có sẵn thì ko cần phải viết html nữa)
+       ::before 
+       ::after
+       ::first-letter
+       ::last-letter
+       ::selection
+Đệm viền và khoảng lề:
+       padding: x(trên) y(phải) z(dưới) t(trái) (px);
+                x(trên, dưới) y(trái, phải);
+       border(lớp viền, lớp vỏ)-width: là viền của hộp 
+             border-style:
+       margin: tạo khoảng cách giữa 2 box 
+       box-sizing:tự động tính toán để giữ kích thước của box (border-box)
+Thuộc tính tạo nền:
+       Background-color: màu nền
+       Background-clip: quyết định background đổ từ đâu
+       Background-image: url();
+                         linear-gradient(hướng xoay(deg),màu 1, màu 2): dải màu chuyển đều đặn;
+                         màu rgba(màu 1, màu 2 ,màu 3, độ trong suốt): pha màu
+       Background-size: contain: lấy chiều dài nhất nhưng ko bị cắt xén
+                        cover : lấy chiều dài nhất chấp nhận bị cắt
+       Backgroung-repet: lặp lại
+       Background-origin: hình ảnh đổ từ lớp nào vào trong;
+       Background-position: vị trí của ảnh,lấy gốc tọa độ của cha góc trên cùng bên trái;
+       Background shorthand: định nghĩa background ngắn gọn hơn
+                            hình ảnh -> no repet -> vị trí/size ->
+Thuộc tính vị trí(Position)(top,botton,...)
+       Position: relative:lấy chính mình làm gốc tọa độ
+                 absolute:1 đối tượng là con của đối tượng khác, và muốn di chuyển con xung quanh cha
+                 fixed:đối tượng phụ thuộc vào cửa sổ trình duyệt
+                 sticky: bám dính, ví dụ khi kéo lên sẽ ko bị trôi mà dừng lại ở top
+                 (-webkit-sticky: dùng để hỗ trợ trên trình duyệt)
+nhưng tất cả sẽ ghi đè lên đối tượng khác nên cần tạo lại khoảng cách
+_____________________________________________________________________________________________
+CSS selectors : các cách để gọi đến phần tử (element) trong css
+    1.ID: dùng"#" định danh duy nhất - không được phép đặt cùng nhau sẽ bị lỗi
+    -ví dụ có các thẻ cùng chung tên như h1 hoặc p mà chỉ muốn thay đổi thuộc tính của 1 thẻ 
+     lúc này cần đánh ID để có thể thay đổi thẻ mình muốn mà không làm ảnh hưởng đến thẻ khác
+    2.class:dùng"."  giống id nhưng có thể sử dụng thuộc tính css chung cho nhiều đối tượng
+             khác với id (khi chỉ có thể sử dụng cho 1 đối tượng)
+     thẻ  * : tất cả các thẻ
+     thẻ * n -> tạo ra n thẻ
+     dấu > : chọn lấy thẻ con trực tiếp
+     Nếu 2 selector có thuộc tính y hệt nhau thì dùng dấu , trong khai báo
+
+label: thẻ nhãn mác có for dùng để nhắm vào thẻ khác(chỉ dùng được với id)
+      khi ấn vào label nó sẽ đưa tới thẻ mà nó for tới
+input: thẻ dùng để nhập, có thuộc tính placeholder để hiển thị chữ nền
+display: thuộc tính hình dáng 
+       -block: khối ,
+       -inline-block: đứng ngang thành 1 hàng nội dung đến đâu thì dài đến đó, 
+       -none: ẩn đi
+       -flex: để xử lí phần tử bên trong thẻ
+block mạnh hơn none, dùng để ghi đè khi muốn click chuột vào là nó hiện
+       line-height: chiều cao của ô viết chữ
+       text-decoration: kiểu chữ
+    viết tắt dùng dấu . và # để viết 
+    vd: .wrapper -> <div class="wrapper"></div>
+text-transform : thay đổi kiểu chữ
+box-shadow: bóng của hộp
+float: thuộc tính đẩy sang góc;
+cursor: thuộc tính con trỏ;
+text-align: căn (giữa, trái ,..);
+
+Đối với ảnh phải dùng tỉ lệ chiều cao và chiều rộng;
+_______________________________________________________________________________
+themifyicon |: lấy icon bằng cách tải file trên web này
+fontawesome |
+dùng ctrl+F để search trên web
+__________________________________________________________________________________________________________________________________
+Những thành phần thường gặp trên giao diện website:
+1.Header (Đầu trang)
+2.Navigation (Điều hướng)
+3. Breadcrumb 
+4.Slidebar
+5.Slider
+6.Banner
+7.Content (Nội dung chính)
+8.Footer (Chân trang)
+
+Cách gõ nhanh: .tên (class) #tên (id)
+
+Thực hành số 1:
+Làm từ ngoài vào trong, từ trên xuống dưới, tổng quan đến chi tiết
+1.Phân tích: 
+     1.1 Header:
+         Xác định vị trí , kích thước (wight,height), màu sắc
+                  kiểu dáng( kiểu chữ,hình tròn,hình vuông)
+     1.2 Slider
+     1.3 Content
+           1.3.1 About
+           1.3.2 Tour:
+           Kiểu giao diện nhỏ (ví dụ khi click vào để mua vé) gọi là modal: nó phủ lên giao diện cũ ( gọi là ovelay: lớp phủ)
+           1.3.3 Contact
+           1.3.4 Image
+           1.3.5 Footer
+     1.4 Footer
+2. Xây dựng base (Xây móng):
+  2.1 Tạp file index 
+  2.2 Tạo file CSS
+  2.3 Reset CSS
+  
